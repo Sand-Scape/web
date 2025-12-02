@@ -4,8 +4,8 @@ import { ModeToggle } from "./mode-toggle";
 
 export default function Navbar() {
   return (
-    <div className="fixed inset-x-0 bg-background/30 backdrop-blur-xs border-b text-secondary-foreground p-4 ">
-      <Container className="flex justify-between">
+    <div className="fixed inset-x-0 bg-background/30 backdrop-blur-xs border-b text-secondary-foreground p-4 z-20">
+      <Container className="flex justify-between items-center">
         <div>
           <Link href="/">
             <h1>Sand Something</h1>
