@@ -8,9 +8,10 @@ import {
   IconArrowLeft,
   IconBrandTabler,
   IconSettings,
-  IconUserBolt,
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
+import { ModeToggle } from "@/components/common/mode-toggle";
+import { BadgeQuestionMark, Map, Microscope } from "lucide-react";
 
 // export const metadata: Metadata = {
 //   title: "Sand Grain Something",
@@ -31,21 +32,28 @@ export default function RootLayout({
       ),
     },
     {
-      label: "Profile",
+      label: "Explore Map",
       href: "#",
       icon: (
-        <IconUserBolt className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+        <Map className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
     },
     {
-      label: "Settings",
+      label: "Sand Analysis",
       href: "#",
       icon: (
-        <IconSettings className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+        <Microscope className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
     },
     {
-      label: "Logout",
+      label: "Get Help",
+      href: "#",
+      icon: (
+        <BadgeQuestionMark className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
+      ),
+    },
+    {
+      label: "Go Back",
       href: "/",
       icon: (
         <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
@@ -72,21 +80,7 @@ export default function RootLayout({
             </div>
           </div>
           <div>
-            <SidebarLink
-              link={{
-                label: "User",
-                href: "#",
-                icon: (
-                  <img
-                    src="#"
-                    className="h-7 w-7 shrink-0 rounded-full"
-                    width={50}
-                    height={50}
-                    alt=""
-                  />
-                ),
-              }}
-            />
+            <ModeToggle />
           </div>
         </SidebarBody>
       </Sidebar>
@@ -105,9 +99,9 @@ export const Logo = () => {
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="font-medium whitespace-pre text-black dark:text-white"
+        className="whitespace-pre text-black dark:text-white"
       >
-        Sand ki ankh
+        SandGrain
       </motion.span>
     </a>
   );
