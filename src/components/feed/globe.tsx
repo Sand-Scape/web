@@ -51,7 +51,7 @@ export function Globe() {
           "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"
         );
         const world: any = await response.json();
-        const countries = feature(world, world.objects.countries).features;
+        const countries = (feature(world, world.objects.countries) as any).features;
         setWorldData(countries);
         console.log(
           "[v0] Successfully loaded world data with",
