@@ -51,7 +51,8 @@ export function Globe() {
           "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"
         );
         const world: any = await response.json();
-        const countries = (feature(world, world.objects.countries) as any).features;
+        const countries = (feature(world, world.objects.countries) as any)
+          .features;
         setWorldData(countries);
         console.log(
           "[v0] Successfully loaded world data with",
@@ -169,7 +170,7 @@ export function Globe() {
           .datum(graticule())
           .attr("d", graticulePath)
           .attr("fill", "none")
-          .attr("stroke", "#cccccc")
+          .attr("stroke", "#000000")
           .attr("stroke-width", 1)
           .attr("opacity", 0.2);
       }
@@ -201,7 +202,7 @@ export function Globe() {
         }
       })
       .attr("fill", "none")
-      .attr("stroke", "#cccccc")
+      .attr("stroke", "#000000")
       .attr("stroke-width", 1.0)
       .attr("opacity", 1.0)
       .style("visibility", function () {
@@ -221,7 +222,7 @@ export function Globe() {
           .datum({ type: "Sphere" })
           .attr("d", sphereOutline)
           .attr("fill", "none")
-          .attr("stroke", "#222222")
+          .attr("stroke", "#00000000")
           .attr("stroke-width", 1)
           .attr("opacity", 1.0);
       }
@@ -262,7 +263,7 @@ export function Globe() {
       <svg
         ref={svgRef}
         viewBox={`0 0 ${width} ${height}`}
-        className="w-full h-full border rounded-lg bg-transparent border-neutral-800 cursor-grab active:cursor-grabbing"
+        className="w-full h-full bg-transparent cursor-grab active:cursor-grabbing"
         preserveAspectRatio="xMidYMid meet"
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
